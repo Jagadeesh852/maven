@@ -20,11 +20,11 @@
 properties([buildDiscarder(logRotator(artifactNumToKeepStr: '5', numToKeepStr: env.BRANCH_NAME=='master'?'5':'1'))])
 
 def buildOs = 'linux'
-def buildJdk = '8'
-def buildMvn = '3.6.2'
+def buildJdk = '15'
+def buildMvn = '3.6.x'
 def runITsOses = ['linux', 'windows']
-def runITsJdks = ['8', '11', '13', '14']
-def runITsMvn = '3.6.2'
+def runITsJdks = ['15']
+def runITsMvn = '3.6.x'
 def runITscommand = "mvn clean install -Prun-its,embedded -B -U -V" // -DmavenDistro=... -Dmaven.test.failure.ignore=true
 def tests
 
